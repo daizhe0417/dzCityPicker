@@ -1,0 +1,51 @@
+/*.dzCityPicker_city{*/
+/*    min-width: 300px;*/
+/*}*/
+.dzCityPicker_city dl {
+    line-height: 2;
+    clear: both;
+    padding: 3px 0;
+    margin: 0;
+}
+
+.dzCityPicker_city dt {
+    position: absolute;
+    width: 2.5em;
+    font-weight: 500;
+    text-align: right;
+    line-height: 2;
+}
+
+.dzCityPicker_city dd {
+    margin-left: 0;
+    line-height: 2;
+}
+
+.dzCityPicker_city.province dd {
+    margin-left: 3em;
+}
+
+.dzCityPicker_city a {
+    display: inline-block;
+    padding: 0 10px;
+    outline: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: 2px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.dzCityPicker_city a:hover,
+.dzCityPicker_city a:focus {
+    background-color: #f1f8ff;
+    border-radius: 2px;
+    color: #46A4FF;
+}
+
+.dzCityPicker_city a.active {
+    background-color: #46A4FF;
+    color: #fff;
+    border-radius: 2px;
+}

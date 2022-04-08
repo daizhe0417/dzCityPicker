@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dzCityPicker Demo</title>
+    <link type="text/css" href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="dzCityPicker.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="box col-xs-6 col-xs-offset-3">
+    <h3>dzCityPicker Demo</h3>
+    <form role="form">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="city1">默认初始化</label>
+                <input class="form-control" id="city1" placeholder="选择省市区">
+            </div>
+            <div class="form-group">
+                <label for="city2">初始化时指定省市区</label>
+                <input class="form-control" id="city2" placeholder="选择省市区">
+            </div>
+            <div class="form-group">
+                <label for="city3">通过setVal函数设置值（也可以直接设置input元素的值，这时dzCityPicker组件的值也会同步更新）</label>
+                <div class="input-group">
+                    <input type="text" id="city" class="form-control" value="安徽省-合肥市">
+                    <span class="input-group-addon" id="setValBtn">setVal</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="city3" placeholder="选择省市区">
+            </div>
+            <div class="form-group">
+                <label for="city3">通过setVal函数清空值（也可以直接设置input元素的值为""，这时dzCityPicker组件的值也会同步更新）</label>
+                <button type="button" class="btn success" id="clearValBtn">clearVal</button>
+                <input class="form-control" id="city4" placeholder="选择省市区" disabled>
+            </div>
+            <div class="form-group">
+                <label for="city5">通过disabled函数设置为disabled</label>
+                <input class="form-control" id="city5" placeholder="选择省市区">
+            </div>
+        </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+    </form>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="city-picker.data.js"></script>
+<script src="dzCityPicker.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#city1").dzCityPicker();
+
+        $('#city2').dzCityPicker({defaultVal: '辽宁省-阜新市-海州区'});
+
+        $("#city3").dzCityPicker();
+        $("#setValBtn").on("click", function () {
+            console.log('setValBtn');
+            $('#city3').dzCityPicker('setVal', $("#city").val());
+        });
+
+        $("#city4").dzCityPicker();
+        $("#clearValBtn").on("click", function () {
+            $('#city4').dzCityPicker('setVal', '');
+        });
+
+        $("#city5").dzCityPicker();
+        $("#city5").dzCityPicker('disabled', true);
+    });
+</script>
+</body>
+</html>
